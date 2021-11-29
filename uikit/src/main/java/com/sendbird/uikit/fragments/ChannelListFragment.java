@@ -134,7 +134,7 @@ public class ChannelListFragment extends BaseGroupChannelFragment {
             headerRightButtonIconTint = args.getParcelable(StringSet.KEY_HEADER_RIGHT_BUTTON_ICON_TINT);
         }
 
-        binding.abvChannelList.setVisibility(useHeader ? View.VISIBLE : View.GONE);
+        binding.abvChannelList.setVisibility(useHeader ? View.GONE : View.GONE);
 
         binding.abvChannelList.getTitleTextView().setText(headerTitle);
 
@@ -154,36 +154,36 @@ public class ChannelListFragment extends BaseGroupChannelFragment {
 
     private void initHeaderOnReady() {
         if (headerLeftButtonListener != null) {
-            binding.abvChannelList.setLeftImageButtonClickListener(headerLeftButtonListener);
+//            binding.abvChannelList.setLeftImageButtonClickListener(headerLeftButtonListener);
         }
 
         if (headerRightButtonListener != null) {
-            binding.abvChannelList.setRightImageButtonClickListener(headerRightButtonListener);
+//            binding.abvChannelList.setRightImageButtonClickListener(headerRightButtonListener);
         } else {
-            binding.abvChannelList.setRightImageButtonClickListener(v -> {
-                if (getContext() != null && getFragmentManager() != null) {
-                    if (Available.isSupportSuper() || Available.isSupportBroadcast()) {
-                        final SelectChannelTypeView layout = new SelectChannelTypeView(getContext());
-                        layout.canCreateSuperGroupChannel(Available.isSupportSuper());
-                        layout.canCreateBroadcastGroupChannel(Available.isSupportBroadcast());
-                        SendBirdDialogFragment dialogFragment = DialogUtils.buildContentViewTop(layout);
-                        layout.setOnItemClickListener((view, position, channelType) -> {
-                            if (dialogFragment != null) {
-                                dialogFragment.dismiss();
-                            }
-                            Logger.dev("++ channelType : " + channelType);
-                            if (isActive()) {
-                                onSelectedChannelType(channelType);
-                            }
-                        });
-                        dialogFragment.showSingle(getFragmentManager());
-                    } else {
-                        if (isActive()) {
-                            onSelectedChannelType(CreateableChannelType.Normal);
-                        }
-                    }
-                }
-            });
+//            binding.abvChannelList.setRightImageButtonClickListener(v -> {
+//                if (getContext() != null && getFragmentManager() != null) {
+//                    if (Available.isSupportSuper() || Available.isSupportBroadcast()) {
+//                        final SelectChannelTypeView layout = new SelectChannelTypeView(getContext());
+//                        layout.canCreateSuperGroupChannel(Available.isSupportSuper());
+//                        layout.canCreateBroadcastGroupChannel(Available.isSupportBroadcast());
+//                        SendBirdDialogFragment dialogFragment = DialogUtils.buildContentViewTop(layout);
+//                        layout.setOnItemClickListener((view, position, channelType) -> {
+//                            if (dialogFragment != null) {
+//                                dialogFragment.dismiss();
+//                            }
+//                            Logger.dev("++ channelType : " + channelType);
+//                            if (isActive()) {
+//                                onSelectedChannelType(channelType);
+//                            }
+//                        });
+//                        dialogFragment.showSingle(getFragmentManager());
+//                    } else {
+//                        if (isActive()) {
+//                            onSelectedChannelType(CreateableChannelType.Normal);
+//                        }
+//                    }
+//                }
+//            });
         }
     }
 

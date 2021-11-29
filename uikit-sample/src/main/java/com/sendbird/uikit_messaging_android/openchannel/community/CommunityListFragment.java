@@ -34,7 +34,7 @@ public class CommunityListFragment extends OpenChannelListFragment {
         final MenuItem createMenuItem = menu.findItem(R.id.action_create_channel);
         ViewCustomMenuIconButtonBinding binding = ViewCustomMenuIconButtonBinding.inflate(getLayoutInflater());
         int iconTint = PreferenceUtils.isUsingDarkTheme() ? R.color.primary_200 : R.color.primary_300;
-        binding.icon.setImageDrawable(DrawableUtils.setTintList(getContext(), R.drawable.icon_create, iconTint));
+//        binding.icon.setImageDrawable(DrawableUtils.setTintList(getContext(), R.drawable.icon_create, iconTint));
         View rootView = binding.getRoot();
         rootView.setOnClickListener(v -> onOptionsItemSelected(createMenuItem));
         createMenuItem.setActionView(rootView);

@@ -107,6 +107,7 @@
                     android:layout_height="@dimen/sb_size_40"
                     android:padding="@dimen/sb_size_8"
                     android:scaleType="centerCrop"
+                    android:visibility="invisible"
                     android:layout_gravity="center"/>
 
                 <androidx.appcompat.widget.AppCompatTextView

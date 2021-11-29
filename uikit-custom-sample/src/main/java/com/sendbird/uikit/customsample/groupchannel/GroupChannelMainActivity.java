@@ -158,7 +158,6 @@ public class GroupChannelMainActivity extends AppCompatActivity {
                         .setUseHeaderLeftButton(true)
                         .setUseHeaderRightButton(true)
                         .setHeaderLeftButtonIconResId(R.drawable.icon_arrow_left)
-                        .setHeaderRightButtonIconResId(R.drawable.icon_create)
                         .setHeaderLeftButtonListener(null)
                         .setHeaderRightButtonListener(null)
                         .setChannelListAdapter(new CustomChannelListAdapter())
